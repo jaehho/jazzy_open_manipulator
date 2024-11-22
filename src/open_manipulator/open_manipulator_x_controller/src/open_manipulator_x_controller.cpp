@@ -62,14 +62,15 @@ OpenManipulatorXController::~OpenManipulatorXController()
 ********************************************************************************/
 void OpenManipulatorXController::init_parameters()
 {
-  // Declare parameters that may be set on this node
-  this->declare_parameter("sim");
-  this->declare_parameter("control_period");
+  // Declare parameters with default values
+  this->declare_parameter<bool>("sim", false);
+  this->declare_parameter<double>("control_period", 0.010);
 
-  // Get parameter from yaml
+  // Get parameters from yaml or command-line
   this->get_parameter_or<bool>("sim", sim_, false);
   this->get_parameter_or<double>("control_period", control_period_, 0.010);
 }
+
 
 void OpenManipulatorXController::init_publisher()
 {

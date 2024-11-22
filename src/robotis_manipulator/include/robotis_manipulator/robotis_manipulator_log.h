@@ -22,6 +22,8 @@
 #include <unistd.h>
 #include <vector>
 
+#include <cstdint>
+
 #if defined(__OPENCR__)
   #include <Eigen.h>
   #include <WString.h>
